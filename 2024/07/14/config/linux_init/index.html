@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="包含Ubuntu、Centos等虚拟机，也包含raspberry等设备 无显示器的树莓派配置在Linux命令行下，执行echo &#39;raspberry&#39; | openssl passwd -6 -stdin获得密钥 创建userconf.txt文件，内容形如 1pi:$6$&#x2F;4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux系统初始化">
+<meta property="og:url" content="http://example.com/2024/07/14/config/linux_init/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="包含Ubuntu、Centos等虚拟机，也包含raspberry等设备 无显示器的树莓派配置在Linux命令行下，执行echo &#39;raspberry&#39; | openssl passwd -6 -stdin获得密钥 创建userconf.txt文件，内容形如 1pi:$6$&#x2F;4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-14T09:11:36.000Z">
+<meta property="article:modified_time" content="2024-07-14T09:27:50.422Z">
 <meta property="article:author" content="YorkLee">
+<meta property="article:tag" content="initialize">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/07/14/config/linux_init/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>个人博客</title>
+  <title>linux系统初始化 | 个人博客</title>
   
 
 
@@ -167,70 +172,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/config/vmware_clean/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YorkLee">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/14/config/vmware_clean/" class="post-title-link" itemprop="url">清理VMware磁盘空间</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-07-14 17:14:12 / 修改时间：17:45:38" itemprop="dateCreated datePublished" datetime="2024-07-14T17:14:12+08:00">2024-07-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>填充磁盘空间（做）<br>接下来，我们可以使用一个二进制0的文件来填充所有磁盘空间，并通过删除该文件来释放空间。按照以下步骤进行操作：</p>
-<p>执行命令 <code>sudo apt-get clean</code> 清除残留的安装包（此步骤可选）。<br>执行命令 <code>sudo dd if=/dev/zero of=/0bits bs=20M</code>，将碎片空间填充为0。在执行过程中，可能会提示磁盘空间不足，但可以忽略该提示。</p>
-<p>执行命令 <code>sudo rm -rf /0bits</code>，删除第二步中填充的文件。使用命令 df -h 可以发现可用的虚拟空间增加了很多，但实际的磁盘空间并没有减少。<br>收缩根目录-&gt;平台特定清理命令<br>最关键的一步是在虚拟机中收缩根目录。<br><code>.\vmware-vdiskmanager.exe -k D:\Vmware\Ubuntu2204\Ubuntu2204.vmdk</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -246,10 +191,9 @@
       <meta itemprop="name" content="个人博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/14/config/linux_init/" class="post-title-link" itemprop="url">linux系统初始化</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          linux系统初始化
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -273,7 +217,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>包含Ubuntu、Centos等虚拟机，也包含raspberry等设备</p>
+        <p>包含Ubuntu、Centos等虚拟机，也包含raspberry等设备</p>
 <h1 id="无显示器的树莓派配置"><a href="#无显示器的树莓派配置" class="headerlink" title="无显示器的树莓派配置"></a>无显示器的树莓派配置</h1><p>在Linux命令行下，执行<code>echo &#39;raspberry&#39; | openssl passwd -6 -stdin</code>获得密钥</p>
 <p>创建userconf.txt文件，内容形如</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi:$6$/4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58c8Que2l1Dwq3vdJMgiZlQSbEXGaY5esVHGBNbCxKLVNqZW1</span><br></pre></td></tr></table></figure>
@@ -291,159 +235,36 @@
 <p>修改文件权限为600</p>
 <p>客户端配置~&#x2F;.ssh&#x2F;config，形如</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host localubuntu</span><br><span class="line">	HostName 192.168.73.133</span><br><span class="line">	User ubuntu</span><br><span class="line">	Port 22</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/local</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/initialize/" rel="tag"># initialize</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/docker/index/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YorkLee">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/14/docker/index/" class="post-title-link" itemprop="url">Docker记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-07-14 17:08:29 / 修改时间：17:28:05" itemprop="dateCreated datePublished" datetime="2024-07-14T17:08:29+08:00">2024-07-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装注意事项"><a href="#安装注意事项" class="headerlink" title="安装注意事项"></a>安装注意事项</h1><p>可按照官网安装步骤，注意以下事项</p>
-<p>将gpg文件放在&#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc 重命名 sudo chmod a+r &#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc</p>
-<p>执行<br>echo <br>  “deb [arch&#x3D;$(dpkg –print-architecture) signed-by&#x3D;&#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc] <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/docker-ce/linux/ubuntu">https://mirrors.aliyun.com/docker-ce/linux/ubuntu</a> <br>  $(. &#x2F;etc&#x2F;os-release &amp;&amp; echo “$VERSION_CODENAME”) stable” | <br>  sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list &gt; &#x2F;dev&#x2F;null</p>
-<p>确保&#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list的内容为<br>deb [arch&#x3D;amd64 signed-by&#x3D;&#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc] <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/docker-ce/linux/ubuntu">https://mirrors.aliyun.com/docker-ce/linux/ubuntu</a>   jammy stable</p>
-<p>将models放在&#x2F;home&#x2F;ubuntu&#x2F;Code&#x2F;SecGPT目录下，做端口映射和目录挂载<br>docker run -p 8080:7860 -d -v D:\Projects\PythonProjects\SecGPT\models:&#x2F;secgpt-mini&#x2F;models d1655c1ed1f2</p>
-<h1 id="命令记录"><a href="#命令记录" class="headerlink" title="命令记录"></a>命令记录</h1><p>进入容器命令行<br><code>docker run -p 8080:7860 -it -v /home/ubuntu/Code/SecGPT/models:/secgpt-mini/models 1c5554c6582a /bin/bash</code></p>
-<p>遇到该问题是transformer版本的问题，pip install  transformers&#x3D;&#x3D;4.40  -i <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>ValueError: Tokenizer class Qwen2Tokenizer does not exist or is not currently imported.<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zengNLP/article/details/138320888">https://blog.csdn.net/zengNLP/article/details/138320888</a></p>
-<p>docker构建 <code>docker build -t secgpt_total:latest .</code></p>
-<p>docker保存 <code>docker save -o secgpt_total.tar secgpt_total:latest</code></p>
-<p>docker清缓存 <code>docker system prune</code></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/07/14/docker/index/" rel="prev" title="Docker记录">
+      <i class="fa fa-chevron-left"></i> Docker记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/07/14/config/vmware_clean/" rel="next" title="清理VMware磁盘空间">
+      清理VMware磁盘空间 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YorkLee">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-07-12 20:05:14" itemprop="dateCreated datePublished" datetime="2024-07-12T20:05:14+08:00">2024-07-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -496,6 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E7%9A%84%E6%A0%91%E8%8E%93%E6%B4%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">无显示器的树莓派配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B8%B8%E8%A7%81%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">安装常见软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">配置代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85oh-my-posh"><span class="nav-number">4.</span> <span class="nav-text">安装oh-my-posh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEssh%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95"><span class="nav-number">5.</span> <span class="nav-text">配置ssh公钥登录</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

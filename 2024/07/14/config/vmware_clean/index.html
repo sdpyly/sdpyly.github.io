@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://example.com/archives/2024/07/index.html">
+  <meta name="description" content="填充磁盘空间（做）接下来，我们可以使用一个二进制0的文件来填充所有磁盘空间，并通过删除该文件来释放空间。按照以下步骤进行操作： 执行命令 sudo apt-get clean 清除残留的安装包（此步骤可选）。执行命令 sudo dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;0bits bs&#x3D;20M，将碎片空间填充为0。在执行过程中，可能会提示磁盘空间不足，但可以忽略该提示。 执行命令 sudo rm -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清理VMware磁盘空间">
+<meta property="og:url" content="http://example.com/2024/07/14/config/vmware_clean/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="填充磁盘空间（做）接下来，我们可以使用一个二进制0的文件来填充所有磁盘空间，并通过删除该文件来释放空间。按照以下步骤进行操作： 执行命令 sudo apt-get clean 清除残留的安装包（此步骤可选）。执行命令 sudo dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;0bits bs&#x3D;20M，将碎片空间填充为0。在执行过程中，可能会提示磁盘空间不足，但可以忽略该提示。 执行命令 sudo rm -">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-14T09:14:12.000Z">
+<meta property="article:modified_time" content="2024-07-14T09:45:38.907Z">
 <meta property="article:author" content="YorkLee">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2024/07/">
+<link rel="canonical" href="http://example.com/2024/07/14/config/vmware_clean/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 个人博客</title>
+  <title>清理VMware磁盘空间 | 个人博客</title>
   
 
 
@@ -167,110 +171,79 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/config/vmware_clean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YorkLee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          清理VMware磁盘空间
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-14 17:14:12 / 修改时间：17:45:38" itemprop="dateCreated datePublished" datetime="2024-07-14T17:14:12+08:00">2024-07-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-14T17:14:12+08:00"
-              content="2024-07-14">
-          07-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/14/config/vmware_clean/" itemprop="url">
-            <span itemprop="name">清理VMware磁盘空间</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-14T17:11:36+08:00"
-              content="2024-07-14">
-          07-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/14/config/linux_init/" itemprop="url">
-            <span itemprop="name">linux系统初始化</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-14T17:08:29+08:00"
-              content="2024-07-14">
-          07-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/14/docker/index/" itemprop="url">
-            <span itemprop="name">Docker记录</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-12T20:05:14+08:00"
-              content="2024-07-12">
-          07-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/12/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>填充磁盘空间（做）<br>接下来，我们可以使用一个二进制0的文件来填充所有磁盘空间，并通过删除该文件来释放空间。按照以下步骤进行操作：</p>
+<p>执行命令 <code>sudo apt-get clean</code> 清除残留的安装包（此步骤可选）。<br>执行命令 <code>sudo dd if=/dev/zero of=/0bits bs=20M</code>，将碎片空间填充为0。在执行过程中，可能会提示磁盘空间不足，但可以忽略该提示。</p>
+<p>执行命令 <code>sudo rm -rf /0bits</code>，删除第二步中填充的文件。使用命令 df -h 可以发现可用的虚拟空间增加了很多，但实际的磁盘空间并没有减少。<br>收缩根目录-&gt;平台特定清理命令<br>最关键的一步是在虚拟机中收缩根目录。<br><code>.\vmware-vdiskmanager.exe -k D:\Vmware\Ubuntu2204\Ubuntu2204.vmdk</code></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/07/14/config/linux_init/" rel="prev" title="linux系统初始化">
+      <i class="fa fa-chevron-left"></i> linux系统初始化
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
